@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kang_sampah/components/my_points.dart';
 import 'package:kang_sampah/components/my_searchbar.dart';
 import 'package:kang_sampah/components/partnership_card.dart';
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
         color: Colors.white,
         padding: const EdgeInsets.all(12),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20,),
             const MySearchbar(),
@@ -44,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 20,),
-            const Text('Daftar Jadi Mitra', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24,),),
+            Text('Daftar Jadi Mitra', style: GoogleFonts.poppins(fontWeight: FontWeight.w700, fontSize: 24,),),
             const SizedBox(height: 20,),
             const SingleChildScrollView(
               scrollDirection: Axis.horizontal,

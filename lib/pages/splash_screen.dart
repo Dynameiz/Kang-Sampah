@@ -30,8 +30,15 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Color.fromRGBO(118, 159, 153, 1),
       body: Center(
-        child: CircularProgressIndicator(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(image: AssetImage('assets/Logo.png'), width: 150,),
+            Text('Kang Sampah', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),),
+          ],
+        ),
       ),
     );
   }
