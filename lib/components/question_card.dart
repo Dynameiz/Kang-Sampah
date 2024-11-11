@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class QuestionCard extends StatefulWidget {
-  const QuestionCard({super.key});
+  const QuestionCard({super.key, required this.question, required this.image});
+
+  final String question;
+  final Image image;
 
   @override
   State<QuestionCard> createState() => _QuestionCardState();
@@ -18,6 +21,16 @@ class _QuestionCardState extends State<QuestionCard> {
         color: Colors.white,
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(widget.question),
+            widget.image
+          ],
+        ),
       ),
     );
   }

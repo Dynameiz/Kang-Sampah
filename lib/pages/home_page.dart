@@ -52,9 +52,9 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  PartnershipCard(),
-                  PartnershipCard(),
-                  PartnershipCard(),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Pengangkut.png'), width: 60.0,), title: "Mitra\nPengangkut"),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Retail.png'), width: 60.0,), title: "Mitra\nRetail"),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Event.png'), width: 60.0,),  title: "Mitra\nEvent"),
                 ],
               ),
             ),
@@ -64,10 +64,10 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  QuestionCard(),
-                  QuestionCard(),
-                  QuestionCard(),
-                  QuestionCard(),
+                  QuestionCard(question: "Cara Memesan Kang Sampah", image: Image(image: AssetImage('assets/Cara_Memesan.png'),)),
+                  QuestionCard(question: "Cara Menjadi Mitra", image: Image(image: AssetImage('assets/Cara_Menjadi_Mitra.png'),)),
+                  QuestionCard(question: "Cara mencari TPA & TPS", image: Image(image: AssetImage('assets/Mencari_TPS_TPA.png'),)),
+                  QuestionCard(question: "Cara Menukar Poin", image: Image(image: AssetImage('assets/Cara_Menukar_Poin.png'),)),
                 ],
               ),
             ),
