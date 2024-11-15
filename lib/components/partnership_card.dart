@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PartnershipCard extends StatefulWidget {
-  const PartnershipCard({super.key, required this.image, required this.title});
+  const PartnershipCard({super.key, required this.image, required this.title, required this.onTap});
 
   final String title;
   final Image image;
+  final VoidCallback onTap;
 
   @override
   State<PartnershipCard> createState() => _PartnershipCardState();
@@ -14,7 +15,9 @@ class PartnershipCard extends StatefulWidget {
 class _PartnershipCardState extends State<PartnershipCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return InkWell(
+      onTap: widget.onTap,
+      child: Container(
       margin: const EdgeInsets.symmetric(horizontal: 5),
       height: 90,
       width: 160,
@@ -32,6 +35,7 @@ class _PartnershipCardState extends State<PartnershipCard> {
         ],
       ),
         )
+    )
     );
   }
 }

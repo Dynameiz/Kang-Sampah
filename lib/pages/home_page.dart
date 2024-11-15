@@ -6,6 +6,9 @@ import 'package:kang_sampah/components/partnership_card.dart';
 import 'package:kang_sampah/components/question_card.dart';
 import 'package:kang_sampah/components/tpa_card.dart';
 import 'package:kang_sampah/components/tps_card.dart';
+import 'package:kang_sampah/pages/register_event.dart';
+import 'package:kang_sampah/pages/register_pengangkut.dart';
+import 'package:kang_sampah/pages/register_retail.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +18,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  void handleRegisterEvent() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const RegisterEvent()),
+    );
+  }
+
+  void handleRegisterPengangkut() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const RegisterPengangkut()),
+    );
+  }
+
+  void handleRegisterRetail() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const RegisterRetail()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -48,13 +73,13 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20,),
             Text('Daftar Jadi Mitra', style: GoogleFonts.poppins(fontWeight: FontWeight.w700, fontSize: 24,),),
             const SizedBox(height: 20,),
-            const SingleChildScrollView(
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Pengangkut.png'), width: 60.0,), title: "Mitra\nPengangkut"),
-                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Retail.png'), width: 60.0,), title: "Mitra\nRetail"),
-                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Event.png'), width: 60.0,),  title: "Mitra\nEvent"),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Pengangkut.png'), width: 60.0,), title: "Mitra\nPengangkut", onTap: handleRegisterPengangkut,),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Retail.png'), width: 60.0,), title: "Mitra\nRetail", onTap: handleRegisterRetail,),
+                  PartnershipCard(image: Image(image: AssetImage('assets/Mitra_Event.png'), width: 60.0,),  title: "Mitra\nEvent", onTap: handleRegisterEvent,),
                 ],
               ),
             ),
